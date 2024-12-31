@@ -6,41 +6,8 @@ import InfoCard from "@/components/InfoCard";
 import { Shield, Zap, Clock , ClockAlert} from "lucide-react";
 import PasswordCrackTime from "@/components/CrackingTime";
 import { useState } from 'react';
+import words from "@/data/words";
 
-const words: string[] = [
-  "correct",
-  "horse",
-  "battery",
-  "staple",
-  "apple",
-  "banana",
-  "orange",
-  "mango",
-  "purple",
-  "green",
-  "blue",
-  "red",
-  "happy",
-  "quick",
-  "lazy",
-  "brave",
-  "silent",
-  "loud",
-  "soft",
-  "hard",
-  "light",
-  "dark",
-  "cold",
-  "hot",
-  "fast",
-  "slow",
-  "big",
-  "small",
-  "strong",
-  "weak",
-  "high",
-  "low",
-];
 
 const Page: React.FC = () => {
   const [wordCount, setWordCount] = useState<number>(4);

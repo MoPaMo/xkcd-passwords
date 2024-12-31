@@ -7,41 +7,7 @@ import PasswordDisplay from "./PasswordDisplay";
 import EntropySlider from "./EntropySlider";
 import GenerateButton from "./GenerateButton";
 import React from "react";
-
-const words: string[] = [
-  "correct",
-  "horse",
-  "battery",
-  "staple",
-  "apple",
-  "banana",
-  "orange",
-  "mango",
-  "purple",
-  "green",
-  "blue",
-  "red",
-  "happy",
-  "quick",
-  "lazy",
-  "brave",
-  "silent",
-  "loud",
-  "soft",
-  "hard",
-  "light",
-  "dark",
-  "cold",
-  "hot",
-  "fast",
-  "slow",
-  "big",
-  "small",
-  "strong",
-  "weak",
-  "high",
-  "low",
-];
+import words from "@/data/words";
 
 interface GeneratorCardProps {
   wordCount: number;
