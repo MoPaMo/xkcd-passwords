@@ -3,11 +3,10 @@
 import Header from "@/components/Header";
 import GeneratorCard from "@/components/GeneratorCard";
 import InfoCard from "@/components/InfoCard";
-import { Shield, Zap, Clock , ClockAlert} from "lucide-react";
+import { Shield, Zap, Clock, ClockAlert , InfoIcon } from "lucide-react";
 import PasswordCrackTime from "@/components/CrackingTime";
-import { useState } from 'react';
+import { useState } from "react";
 import words from "@/data/words";
-
 
 const Page: React.FC = () => {
   const [wordCount, setWordCount] = useState<number>(4);
@@ -26,7 +25,9 @@ const Page: React.FC = () => {
             {entropy.toFixed(1)} bits of entropy.
           </InfoCard>
           <InfoCard
-            icon={(Math.pow(2, entropy - 10) > 3600*24*365) ? Clock : ClockAlert}
+            icon={
+              Math.pow(2, entropy - 10) > 3600 * 24 * 365 ? Clock : ClockAlert
+            }
             title="Cracking Time"
             iconColor="text-blue-500"
           >
@@ -36,6 +37,11 @@ const Page: React.FC = () => {
             Words are easier to remember than random characters, but still
             provide high security.
           </InfoCard>
+        <a href="https://xkcd.com/936/" className="col-span-1 md:col-span-2 lg:col-span-3">
+            <InfoCard icon={InfoIcon} title="Origin" iconColor="text-green-500">
+                This method is based on the XKCD web comic "Password Strength" (number 936). Click here to read it!
+            </InfoCard>
+        </a>
         </div>
       </div>
     </div>
