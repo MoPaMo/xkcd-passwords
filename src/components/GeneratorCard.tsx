@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { Shield, Zap } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import PasswordDisplay from "./PasswordDisplay";
 import EntropySlider from "./EntropySlider";
 import GenerateButton from "./GenerateButton";
