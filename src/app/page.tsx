@@ -1,11 +1,10 @@
 import Image from "next/image";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div>
-      <header>
-        <h1>xkcd-Passwords</h1>
-      </header>
+      <Header />
     </div>
   );
 }
