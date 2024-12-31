@@ -7773,6 +7773,6 @@ const words = ["abacus",
 "zookeeper",
 "zoologist",
 "zoology",
-"zoom", ]
-
+"zoom" ]
+export default words;
 
