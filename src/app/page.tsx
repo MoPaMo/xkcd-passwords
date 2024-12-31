@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import GeneratorCard from "@/components/GeneratorCard";
 import InfoCard from "@/components/InfoCard";
-import { Shield, Zap } from "lucide-react";
+import { Shield, Zap, Clock , ClockAlert} from "lucide-react";
 
 const words: string[] = [
   "correct",
@@ -56,8 +56,13 @@ const Page: React.FC = () => {
             Using {wordCount} words from a list of {words.length} words provides{" "}
             {entropy.toFixed(1)} bits of entropy.
           </InfoCard>
-          <InfoCard icon={Zap} title="Cracking Time" iconColor="text-blue-500">
-            With an assumed rate of 1,000 guesses per second, it would take 
+          <InfoCard
+            icon={(Math.pow(2, entropy - 10) > 3600*24*365) ? Clock : ClockAlert}
+            title="Cracking Time"
+            iconColor="text-blue-500"
+          >
+            It would take a computer {Math.pow(2, entropy - 10).toFixed(0)}{" "}
+            seconds to crack the password.
           </InfoCard>
           <InfoCard icon={Zap} title="Memorability" iconColor="text-blue-500">
             Words are easier to remember than random characters, but still
