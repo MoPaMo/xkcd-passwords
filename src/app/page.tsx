@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import GeneratorCard from "@/components/GeneratorCard";
 import InfoCard from "@/components/InfoCard";
 import { Shield, Zap, Clock , ClockAlert} from "lucide-react";
-
+import PasswordCrackTime from "@/components/CrackingTime";
 const words: string[] = [
   "correct",
   "horse",
@@ -61,8 +61,7 @@ const Page: React.FC = () => {
             title="Cracking Time"
             iconColor="text-blue-500"
           >
-            It would take a computer {Math.pow(2, entropy - 10).toFixed(0)}{" "}
-            seconds to crack the password.
+            <PasswordCrackTime entropy={entropy} />
           </InfoCard>
           <InfoCard icon={Zap} title="Memorability" iconColor="text-blue-500">
             Words are easier to remember than random characters, but still
