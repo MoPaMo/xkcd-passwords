@@ -5,6 +5,8 @@ import GeneratorCard from "@/components/GeneratorCard";
 import InfoCard from "@/components/InfoCard";
 import { Shield, Zap, Clock , ClockAlert} from "lucide-react";
 import PasswordCrackTime from "@/components/CrackingTime";
+import { useState } from 'react';
+
 const words: string[] = [
   "correct",
   "horse",
@@ -41,7 +43,7 @@ const words: string[] = [
 ];
 
 const Page: React.FC = () => {
-  const wordCount: number = 4;
+  const [wordCount, setWordCount] = useState<number>(4);
   const entropy: number = Math.log2(Math.pow(words.length, wordCount));
 
   return (
@@ -49,7 +51,7 @@ const Page: React.FC = () => {
       <div className="w-full max-w-2xl space-y-8">
         <Header />
 
-        <GeneratorCard />
+        <GeneratorCard wordCount={wordCount} setWordCount={setWordCount} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <InfoCard icon={Shield} title="Security" iconColor="text-green-500">

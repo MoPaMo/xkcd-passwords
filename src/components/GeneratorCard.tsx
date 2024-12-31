@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import PasswordDisplay from "./PasswordDisplay";
 import EntropySlider from "./EntropySlider";
 import GenerateButton from "./GenerateButton";
+import React from "react";
 
 const words: string[] = [
   "correct",
@@ -42,9 +43,13 @@ const words: string[] = [
   "low",
 ];
 
-const GeneratorCard: React.FC = () => {
+interface GeneratorCardProps {
+  wordCount: number;
+  setWordCount: (count: number) => void;
+}
+
+const GeneratorCard: React.FC<GeneratorCardProps> = ({ wordCount, setWordCount }) => {
   const [password, setPassword] = useState<string>("");
-  const [wordCount, setWordCount] = useState<number>(4);
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const { toast } = useToast();
 
